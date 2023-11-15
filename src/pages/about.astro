@@ -1,0 +1,114 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="à propos | Fatima ZEMROUR" description="à propos Fatima ZEMROUR">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="à propos"
+				tagline="Merci d'être passé. Lisez ci-dessous pour en savoir plus sur moi-même et mon parcours."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="Fatima ZEMROUR au travail avec un collègue"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Arrière-plan</h2>
+				<div class="content">
+					<p>
+						Diplômée en Licence en génie informatique, je suis
+                             passionnée par le développement informatique et la
+                             visualisation des informations. Mon expérience pratique en
+                             programmation et en statistiques me permet de comprendre les
+                             problèmes complexes de données et de les résoudre
+                             efficacement. Je suis à la recherche d'un poste à temps plein
+                             dans mon domaine de formations..
+					</p>
+					<p>
+						Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis
+						natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl
+						condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel
+						quam elementum pulvinar etiam non.
+					</p>
+					
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Diplômes</h2>
+				<div class="content">
+					<p>Licence Fondamental en Génie Logitiel option Science Mathématique et informatique.</p>
+				</div>
+			</section>
+			
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
